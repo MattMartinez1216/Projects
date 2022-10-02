@@ -34,6 +34,12 @@ int main() {
 
     cin >> user_Answer;
 
+    while (!cin.good()) {
+      cin.clear();
+      cin.ignore(10000,'\n');
+      cout << "Invalid input, enter another answer." << endl;
+      cin >> user_Answer;
+    }
     while (!(answer_Attempts == 0)) {
     if ( user_Answer == correct_Answer) {
       cout << "Correct! Enter 1 to end game. Enter any ";
@@ -60,7 +66,8 @@ int main() {
           }
       }
     }
-  }
+  
+  } 
 
   return 0;
 }
